@@ -1,11 +1,12 @@
 ## This set of functions together first creates a special matrix object, then
 ## computes the inverse of the matrix object, and stores the result. 
 ## If the inverse of the matrix has already been previously computed, then the 
-## previously calculated result it returned, saving computation time.
+## previously calculated result it returned, saving computation time. This set 
+## of functions assumes the x matrix is inversible.
 
 
 ## The function, makeCacheMatrix, creates a special matrix object that can 
-## cache it's inverse. 
+## cache it's inverse 
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -22,8 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## Computes the inverse of a special 'matrix' object created by the 
-## makeCacheMatrix function and stores the solution. If the inverse has has 
-## previously been calculated, the stored result is returned instead
+## makeCacheMatrix function, stores the solution and prints to the console. If 
+## the inverse has has previously been calculated, the stored result is 
+## returned instead
 
 cacheSolve <- function(x, ...) {
     m <- x$getinv()
